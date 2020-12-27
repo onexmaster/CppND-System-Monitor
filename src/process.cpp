@@ -66,7 +66,7 @@ long int Process::UpTime() {
     long int start_time=LinuxParser::UpTime(Pid());
     long int uptime= LinuxParser::UpTime();
     long int hertz=sysconf(_SC_CLK_TCK);
-    long seconds = uptime - (start_time / hertz);
+    long seconds = uptime-(start_time / hertz);
 
   return seconds;
 }
