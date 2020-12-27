@@ -9,6 +9,17 @@ using std::to_string;
 // INPUT: Long int measuring seconds
 // OUTPUT: HH:MM:SS
 // REMOVE: [[maybe_unused]] once you define the function
+string format(string temp){
+	if(temp.size()>=2)
+		return temp;
+	else 
+		{
+			string res="0";
+			res+=temp;
+			return res;
+		}
+
+}
 string Format::ElapsedTime(long seconds) { 
     int days, hours, minutes, secs;
 
@@ -24,10 +35,10 @@ string Format::ElapsedTime(long seconds) {
 	secs = seconds % 60;
 
 	if (days == 0) {
-		return to_string(hours) + ":" + to_string(minutes) + ":" + to_string(secs);
+		return format(to_string(hours)) + ":" + format(to_string(minutes)) + ":" + format(to_string(secs));
 	}
 	else{
-		return to_string(days) + " days " + to_string(hours) + ":" + to_string(minutes) + ":" + to_string(secs);
+		return format(to_string(days)) + " days " + format(to_string(hours)) + ":" + format(to_string(minutes)) + ":" + format(to_string(secs));
 	}
 
  }
