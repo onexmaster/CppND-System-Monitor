@@ -29,6 +29,7 @@ std::string Kernel();
 
 // CPU
 enum CPUStates {
+  //It automatically sets kuser as 1 , knice as 1 and so on 
   kUser_ = 0,
   kNice_,
   kSystem_,
